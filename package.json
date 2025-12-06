@@ -1,0 +1,22 @@
+{
+  "name": "sandbox-mailer",
+  "version": "1.0.0",
+  "description": "Local email sandbox with rate limiting and latency simulation for Laravel development",
+  "main": "server/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mailparser": "^3.6.5",
+    "smtp-server": "^3.13.0",
+    "uuid": "^9.0.0"
+  },
+  "keywords": ["email", "smtp", "sandbox", "mailer", "laravel"],
+  "author": "",
+  "license": "MIT"
+}
+
