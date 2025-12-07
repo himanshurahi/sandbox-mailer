@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Sandbox Mailer launcher script
+# Usage: mailer
+
+PROJECT_DIR="/Applications/Projects/mailer"
+URL="http://localhost:8025"
+
+cd "$PROJECT_DIR" || exit 1
+
+echo "🚀 Starting Sandbox Mailer..."
+
+# Start the server in background and open browser after a short delay
+npm start &
+SERVER_PID=$!
+
+# Wait a moment for server to start, then open browser
+sleep 2
+open "$URL"
+
+echo ""
+echo "✨ Browser opened at $URL"
+echo "📧 SMTP server running on port 2525"
+echo ""
+echo "Press Ctrl+C to stop the server"
+
+# Wait for the server process
+wait $SERVER_PID
+
